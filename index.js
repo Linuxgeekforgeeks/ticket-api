@@ -2,10 +2,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
+const userRoute=require("./routes/userRoutes")
+
 // Variables
 const app = express();
 dotenv.config();
 const port = 5000;
+
+
+//middleware
+app.use("/api/auth",userRoute)
+
 
 app.get("/api/hello", (req, res) => {
   const name = req.params;
