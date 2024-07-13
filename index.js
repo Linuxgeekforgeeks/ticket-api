@@ -15,7 +15,8 @@ app.use("/api/auth",userRoute)
 
 
 app.get("/api/hello", (req, res) => {
-  const name = req.params;
+  const {name} = req.query;
+  console.log(name)
   res.send("Hello People on Youtube." + name);
 });
 
